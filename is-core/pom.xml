@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ch.inser.isejawa.pom</groupId>
+        <artifactId>is-pom-project</artifactId>
+        <version>6.0.4</version>
+        <relativePath>../is-pom-project/pom.xml</relativePath>
+    </parent>
+    <groupId>ch.inser.isejawa</groupId>
+    <artifactId>is-core</artifactId>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
+    <organization>
+        <name>INSER SA</name>
+        <url>www.inser.ch</url>
+    </organization>
+    <scm>
+        <connection>scm:git:git://gitlab.inser.ch:5061/inser/isejawa/is-core.git</connection>
+        <url>http://gitlab.inser.ch:5061/inser/isejawa/is-core.git</url>
+    </scm>
+    <properties>
+        <sonar.dependencyCheck.htmlReportPath>./target/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
+        <sonar.dependencyCheck.jsonReportPath>./target/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
+        <sonar.dependencyCheck.summarize>true</sonar.dependencyCheck.summarize>
+    </properties>
+    <dependencies>
+        <!-- Logger -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <!-- si besoin de log4j à la compilation, mettre scope compile dans l'enfant -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+        <!-- Pour les tests -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+        <!-- Autres librairies jsl -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+        </dependency>
+        <!-- Autres librairies dynamic -->
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+        </dependency>
+        <!-- Autres librairies dynaplus -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.javaunderground</groupId>
+            <artifactId>ISdebugablestatement</artifactId>
+        </dependency>
+    </dependencies>
+</project>
